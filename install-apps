@@ -1,0 +1,47 @@
+#!/bin/bash
+
+echo -e "Install Applications Script\n1: Install all for x86\n2: Install Presets.\n3: Cancel"
+
+read command
+
+if [ $command == 1 ]
+then
+	sudo apt install wine
+	sudo apt install obs-studio
+	sudo apt install kamoso
+	sudo apt install kdenlive
+	sudo apt install steam
+	sudo apt install atom
+	sudo apt install elisa
+	sudo apt install discord
+	sudo apt install blender
+	sudo apt install inkscape
+	sudo apt install lutris
+elif [ $command == 2 ]
+then
+	echo -e "1: Video Production (OBS, KdenLive, Blender) \n2: Gaming (Lutris, Steam, Wine) \n3: Lightweight Productivity (Elisa Music, Atom, Inkscape, Kdenlive) \n4: Cancel"
+
+	read presets
+
+	if [ $presets == 1 ]
+	then
+		sudo apt install obs-studio
+		sudo apt install kdenlive
+		sudo apt install blender
+	elif [ $presets == 2 ]
+	then
+		sudo apt install lutris
+		sudo apt install wine
+		sudo apt install steam
+	elif [ $presets == 2 ]
+	then
+		sudo apt install elisa
+		sudo apt install atom
+		sudo apt install inkscape
+		sudo apt instal kdenlive
+	else
+		echo Ok, canceled.
+	fi
+else
+	echo Ok, canceled.
+fi
